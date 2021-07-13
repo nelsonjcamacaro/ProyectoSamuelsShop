@@ -1,1 +1,13 @@
-/* No CSS *//*# sourceMappingURL=styles.css.map */
+.align-text-top {
+  width: 120px;
+  height: 120px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+/*# sourceMappingURL=styles.css.map */
