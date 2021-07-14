@@ -1,3 +1,16 @@
+var productList = [
+    {id:'0159D', name: 'Mariel',sizes: ['36','37','38','39/40'], colors: ['Taupe','blanco','azul perlado','gris claro', 'negro', 'rose'], price: 12.0,},
+    {id:'0164D', name: 'Julia',sizes: ['35/36','37/38','39/40'], colors: ['Verde aguacate','azul perlado','dorado', 'negro', 'pardo','rose'], price: 8.0},
+    {id:'0187D', name: 'Positive',sizes: ['35/36','37/38','39/40'], colors: ['Azul acido','Lila pastel','Rosado pastel', 'rose', 'verde claro'], price: 5.40},
+    {id:'0168D', name: 'Celia',sizes: ['35/36','37/38','39/40'], colors: ['Amarillo','blanco','azul perlado','verde claro', 'negro', 'rose'], price: 5.90},
+    {id:'0150D', name: 'Aurora',sizes: ['35/36','37/38','39/40'], colors: ['fresa','azul perlado','amarillo','fucsia', 'mora', 'negro', 'verde claro'], price: 5.10},
+    {id:'0144D', name: 'Salome',sizes: ['35/36','37/38','39/40'], colors: ['blanco','azul perlado','beige', 'coca cola','negro', 'rose'], price: 6.20},
+    {id:'0143D', name: 'Frida',sizes: ['35/36','37/38','39/40'], colors: ['Lila perlado','blanco','azul perlado','cobre', 'negro', 'rose','rojo'], price: 5.70},
+    {id:'0154', name: 'Bianca',sizes: ['35/36','37/38','39/40'], colors: ['Bronce perlado','blanco','azul perlado','beige', 'negro', 'rose'], price: 6.20},
+    {id:'167', name: 'Jimena',sizes: ['35/36','37/38','39/40'], colors: ['agua marina','lila pastel','naranja neon','rosado perlado', 'negro', 'rose'], price: 4.80},
+    {id:'0113D', name: 'Sara',sizes: ['35/36','37/38','39/40'], colors: ['Amarillo','blanco','azul perlado','verde claro', 'negro', 'rose'], price: 6.20}
+]
+
 const AddToCarButton= document.querySelectorAll(".addToCart")
 
 AddToCarButton.forEach((AddToCarButton2) => {
@@ -9,12 +22,8 @@ buyButton.addEventListener('click', comprarButtonClicked);
 
 const shoppingCartItemsContainer = document.querySelector('.shoppingCartItemsContainer');
 
-
-
 function addToCarFunction(e){
     const buttonClicked= e.target;
-    // console.log (buttonClicked);
-
     const item = buttonClicked.closest('.item');
 
     const itemTitle = item.querySelector('.item-title').textContent;
@@ -29,11 +38,11 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
     const elementsTitle = shoppingCartItemsContainer.getElementsByClassName('shoppingCartItemTitle');
     for (let i = 0; i < elementsTitle.length; i++) {
         if (elementsTitle[i].innerText === itemTitle) {
-        let elementQuantity = elementsTitle[i].parentElement.parentElement.parentElement.querySelector('.shoppingCartItemQuantity');
-        elementQuantity.value++;
-        $('.toast').toast('show');
-        updateShoppingCartTotal();
-        return;
+            let elementQuantity = elementsTitle[i].parentElement.parentElement.parentElement.querySelector('.shoppingCartItemQuantity');
+            elementQuantity.value++;
+            $('.toast').toast('show');
+            updateShoppingCartTotal();
+            return;
         }
     }
 
@@ -69,23 +78,24 @@ shoppingCartRow.querySelector('.buttonDelete').addEventListener('click', removeS
 shoppingCartRow.querySelector('.shoppingCartItemQuantity').addEventListener('change', quantityChanged);
 
 updateShoppingCartTotal();
+
 }
 
 function updateShoppingCartTotal() {
-let total = 0;
-const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
+    let total = 0;
+    const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
 
-const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
+    const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
 
-shoppingCartItems.forEach((shoppingCartItem) => {
-const shoppingCartItemPriceElement = shoppingCartItem.querySelector('.shoppingCartItemPrice');
-const shoppingCartItemPrice = Number( shoppingCartItemPriceElement.textContent.replace('USD', '')
-);
-const shoppingCartItemQuantityElement = shoppingCartItem.querySelector('.shoppingCartItemQuantity');
-const shoppingCartItemQuantity = Number( shoppingCartItemQuantityElement.value);
-total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
-});
-shoppingCartTotal.innerHTML = `${total.toFixed(2)}USD`;
+    shoppingCartItems.forEach((shoppingCartItem) => {
+        const shoppingCartItemPriceElement = shoppingCartItem.querySelector('.shoppingCartItemPrice');
+        const shoppingCartItemPrice = Number( shoppingCartItemPriceElement.textContent.replace('USD', ''));
+        const shoppingCartItemQuantityElement = shoppingCartItem.querySelector('.shoppingCartItemQuantity');
+        const shoppingCartItemQuantity = Number( shoppingCartItemQuantityElement.value);
+        total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
+    });
+
+    shoppingCartTotal.innerHTML = `${total.toFixed(2)} USD`;
 }
 
 function removeShoppingCartItem(event) {
