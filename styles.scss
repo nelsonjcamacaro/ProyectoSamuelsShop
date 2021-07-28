@@ -21,6 +21,7 @@ $blue-color: #55c0e5;
 }
 
 *{
+    box-sizing: border-box;
     padding:0;
     margin:0;
 }
@@ -36,11 +37,15 @@ $blue-color: #55c0e5;
 }
 
 @mixin cardsCategoryStyle {
-    background-size: 25px 50px;
-    background-position:center;
+    // background-size: 25px 50px;
+    // background-position:center;
     width: auto;
     height: 500px;
-    margin: 10px 0 0 10px;
+    margin: 10px 50px 0 10px;
+    // background-size: auto 100%;
+    // background-repeat: no-repeat;
+    overflow: hidden;
+    // box-shadow: $blue-color 10px 10px 10px 10px;
     // position: relative;
     // float: left;
 }
@@ -118,10 +123,10 @@ header{
     height: 1500px;
     text-align: center;
     
-    .imgubication1{
-        grid-column: 11/15;
-        grid-row: 1/2;
-    }
+    // .imgubication1{
+    //     grid-column: 11/15;
+    //     grid-row: 1/2;
+    // }
 
     .products-transition{
         margin-top:50px;
@@ -142,31 +147,24 @@ header{
 
     .ladys-side{
         grid-column: 2/6;
-        grid-row: 2/3;
+        grid-row: 1/2;
         align-self: center;
         @include cardsCategoryStyle;
-        background-image: url(/img/womenSS.jpeg);
-        background-size: auto 100%;
-        background-repeat: no-repeat;    }
-        overflow: hidden;
+        // background-image: url(/img/womenSS.jpeg);
+    }
     .gentlemen-side{
         grid-column: 6/10;
-        grid-row: 2/3;
+        grid-row: 1/2;
         align-self: center;
         @include cardsCategoryStyle;
-        background-image: url(/img/menSS.jpeg);
-        background-size: auto 100%;
-        background-repeat: no-repeat;    }
-        overflow: hidden;
+        // background-image: url(/img/menSS.jpeg);
+    }
     .children-side{
         grid-column: 10/14;
-        grid-row: 2/3;
+        grid-row: 1/2;
         align-self: center;
         @include cardsCategoryStyle;
-        background-image: url(/img/childrenSS.jpeg);
-        background-size: auto 100%;
-        background-repeat: no-repeat;
-        overflow: hidden;
+        // background-image: url(/img/childrenSS.jpeg);
     }
     .children-side:hover{
         transform: scale(1.1);        
@@ -254,6 +252,7 @@ header{
 
 .h3-category{
     @include fontStyle();
-    margin-top: 170px;
+    margin-top: 0px;
+    background-color: #55c0e5;
 }
 

@@ -14,6 +14,8 @@
 }
 
 * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -113,17 +115,6 @@ header .car-info .basket-logo {
       grid-template-rows: repeat(3, 1fr);
   height: 1500px;
   text-align: center;
-  overflow: hidden;
-  overflow: hidden;
-}
-
-.main-info .imgubication1 {
-  -ms-grid-column: 11;
-  -ms-grid-column-span: 4;
-  grid-column: 11/15;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
 }
 
 .main-info .products-transition {
@@ -155,60 +146,47 @@ header .car-info .basket-logo {
   -ms-grid-column: 2;
   -ms-grid-column-span: 4;
   grid-column: 2/6;
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-row-span: 1;
-  grid-row: 2/3;
+  grid-row: 1/2;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  background-size: 25px 50px;
-  background-position: center;
   width: auto;
   height: 500px;
-  margin: 10px 0 0 10px;
-  background-image: url(/img/womenSS.jpeg);
-  background-size: auto 100%;
-  background-repeat: no-repeat;
+  margin: 10px 50px 0 10px;
+  overflow: hidden;
 }
 
 .main-info .gentlemen-side {
   -ms-grid-column: 6;
   -ms-grid-column-span: 4;
   grid-column: 6/10;
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-row-span: 1;
-  grid-row: 2/3;
+  grid-row: 1/2;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  background-size: 25px 50px;
-  background-position: center;
   width: auto;
   height: 500px;
-  margin: 10px 0 0 10px;
-  background-image: url(/img/menSS.jpeg);
-  background-size: auto 100%;
-  background-repeat: no-repeat;
+  margin: 10px 50px 0 10px;
+  overflow: hidden;
 }
 
 .main-info .children-side {
   -ms-grid-column: 10;
   -ms-grid-column-span: 4;
   grid-column: 10/14;
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-row-span: 1;
-  grid-row: 2/3;
+  grid-row: 1/2;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  background-size: 25px 50px;
-  background-position: center;
   width: auto;
   height: 500px;
-  margin: 10px 0 0 10px;
-  background-image: url(/img/childrenSS.jpeg);
-  background-size: auto 100%;
-  background-repeat: no-repeat;
+  margin: 10px 50px 0 10px;
   overflow: hidden;
 }
 
@@ -335,6 +313,7 @@ header .car-info .basket-logo {
 .h3-category {
   color: #f08db8;
   font-family: "TITUS";
-  margin-top: 170px;
+  margin-top: 0px;
+  background-color: #55c0e5;
 }
 /*# sourceMappingURL=styles.css.map */
