@@ -113,6 +113,8 @@ header .car-info .basket-logo {
       grid-template-rows: repeat(3, 1fr);
   height: 1500px;
   text-align: center;
+  overflow: hidden;
+  overflow: hidden;
 }
 
 .main-info .imgubication1 {
@@ -156,8 +158,17 @@ header .car-info .basket-logo {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
-  height: 250px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-size: 25px 50px;
+  background-position: center;
   width: auto;
+  height: 500px;
+  margin: 10px 0 0 10px;
+  background-image: url(/img/womenSS.jpeg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
 }
 
 .main-info .gentlemen-side {
@@ -167,8 +178,17 @@ header .car-info .basket-logo {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
-  height: 250px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-size: 25px 50px;
+  background-position: center;
   width: auto;
+  height: 500px;
+  margin: 10px 0 0 10px;
+  background-image: url(/img/menSS.jpeg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
 }
 
 .main-info .children-side {
@@ -178,8 +198,39 @@ header .car-info .basket-logo {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
-  height: 250px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-size: 25px 50px;
+  background-position: center;
   width: auto;
+  height: 500px;
+  margin: 10px 0 0 10px;
+  background-image: url(/img/childrenSS.jpeg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.main-info .children-side:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.main-info .ladys-side:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.main-info .gentlemen-side:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .main-info .about-us {
@@ -196,7 +247,7 @@ header .car-info .basket-logo {
 }
 
 .main-info .about-us .img-about-us {
-  margin-top: 120px;
+  margin-top: 80px;
   -ms-grid-column: 2;
   -ms-grid-column-span: 6;
   grid-column: 2/8;
@@ -220,12 +271,14 @@ header .car-info .basket-logo {
 }
 
 .banner {
-  background-image: url(/img/banner.png);
+  background-image: url(/img/banner3.jpeg);
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   -ms-grid-column: 2;
   -ms-grid-column-span: 8;
   grid-column: 2/10;
-  width: 100%;
+  width: 80%;
+  height: 350px;
   margin-top: 50px;
 }
 
@@ -277,5 +330,11 @@ header .car-info .basket-logo {
 
 .store {
   margin-top: 100px;
+}
+
+.h3-category {
+  color: #f08db8;
+  font-family: "TITUS";
+  margin-top: 170px;
 }
 /*# sourceMappingURL=styles.css.map */

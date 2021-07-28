@@ -35,6 +35,16 @@ $blue-color: #55c0e5;
     font-family: "TITUS";
 }
 
+@mixin cardsCategoryStyle {
+    background-size: 25px 50px;
+    background-position:center;
+    width: auto;
+    height: 500px;
+    margin: 10px 0 0 10px;
+    // position: relative;
+    // float: left;
+}
+
 a{
     text-decoration: none !important;
 }
@@ -129,31 +139,55 @@ header{
             height: 500px
         }
     }
+
     .ladys-side{
         grid-column: 2/6;
         grid-row: 2/3;
-        height: 250px;
-        width: auto;
-    }
+        align-self: center;
+        @include cardsCategoryStyle;
+        background-image: url(/img/womenSS.jpeg);
+        background-size: auto 100%;
+        background-repeat: no-repeat;    }
+        overflow: hidden;
     .gentlemen-side{
         grid-column: 6/10;
         grid-row: 2/3;
-        height: 250px;
-        width: auto;
-    }
+        align-self: center;
+        @include cardsCategoryStyle;
+        background-image: url(/img/menSS.jpeg);
+        background-size: auto 100%;
+        background-repeat: no-repeat;    }
+        overflow: hidden;
     .children-side{
         grid-column: 10/14;
         grid-row: 2/3;
-        height: 250px;
-        width: auto;
+        align-self: center;
+        @include cardsCategoryStyle;
+        background-image: url(/img/childrenSS.jpeg);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        overflow: hidden;
     }
+    .children-side:hover{
+        transform: scale(1.1);        
+        transition: 1s;
+    }
+    .ladys-side:hover{
+        transform: scale(1.1);        
+        transition: 1s;        
+    }
+    .gentlemen-side:hover{
+        transform: scale(1.1);        
+        transition: 1s;
+    }
+
     .about-us{
         grid-column: 1/15;
         grid-row: 3/4;
         display: grid;
         grid-template-columns: repeat(14,1fr);
         .img-about-us{
-            margin-top: 120px;
+            margin-top: 80px;
             grid-column: 2/8;
             width: 350px;
             height: 350px;
@@ -174,10 +208,12 @@ header{
 }
 
 .banner{
-    background-image: url(/img/banner.png);
+    background-image: url(/img/banner3.jpeg);
     background-repeat: no-repeat;
+    background-size: 100% 100%;
     grid-column: 2/10;
-    width: 100%;
+    width: 80%;
+    height: 350px;
     margin-top: 50px;
 }
 
@@ -214,3 +250,10 @@ header{
     // position:inherit;
     margin-top: 100px;
 }
+
+
+.h3-category{
+    @include fontStyle();
+    margin-top: 170px;
+}
+
