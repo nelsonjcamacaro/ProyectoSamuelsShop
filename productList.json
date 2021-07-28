@@ -1,0 +1,82 @@
+[
+    {   
+        "id": 1,
+        "name": "Mariel",
+        "sizes": "36,37,38,39/40", 
+        "colors": "Taupe,blanco,azul perlado,gris claro, negro, rose", 
+        "price": 12.0,
+        "img": "/img/CATALOGUE/Mariel-Rose.jpg"
+    },
+    {
+        "id": 2, 
+        "name": "Julia",
+        "sizes": "35/36,37/38,39/40", 
+        "colors": "Verde aguacate,azul perlado,dorado, negro, pardo,rose", 
+        "price": 8.0,
+        "img": "/img/CATALOGUE/JULIA.png"
+    },
+    {
+        "id": 3, 
+        "name": "Positive",
+        "sizes": "35/36,37/38,39/40", 
+        "colors": "Azul acido,Lila pastel,Rosado pastel, rose, verde claro", 
+        "price": 5.40,
+        "img": "/img/CATALOGUE/POSITIVE.png"
+    },
+    {
+        "id": 4, 
+        "name": "Celia",
+        "sizes": "35/36,37/38,39/40", 
+        "colors": "Amarillo,blanco,azul perlado,verde claro, negro, rose", 
+        "price": 5.90,
+        "img": "/img/CATALOGUE/CELIA.png"
+    },
+    {
+        "id": 5, 
+        "name": "Aurora",
+        "sizes": "35/36,37/38,39/40", 
+        "colors": "fresa,azul perlado,amarillo,fucsia, morado, negro, verde claro", 
+        "price": 5.10,
+        "img": "/img/CATALOGUE/AURORA.JPG"
+    },
+    {
+        "id": 6, 
+        "name": "Salome",
+        "sizes": "35/36,37/38,39/40", 
+        "colors": "blanco,azul perlado,beige, coca cola,negro, rose", 
+        "price": 6.20,
+        "img": "/img/CATALOGUE/SALOME-ROSE.JPG"
+    },
+    {
+        "id": 7, 
+        "name": "Frida",
+        "sizes": "35/36,37/38,39/40", 
+        "colors": "Lila perlado,blanco,azul perlado,cobre, negro, rose,rojo", 
+        "price": 5.70,
+        "img": "/img/CATALOGUE/FRIDA.png"
+    },
+    {
+        "id": 8, 
+        "name": "Bianca",
+        "sizes": "35/36,37/38,39/40", 
+        "colors": "Bronce perlado,blanco,azul perlado,beige, negro, rose", 
+        "price": 6.20,
+        "img": "/img/CATALOGUE/BIANCA.JPG"
+    },
+    {
+        "id": 9, 
+        "name": "Jimena",
+        "sizes": "35/36,37/38,39/40", 
+        "colors": "agua marina,lila pastel,naranja neon,rosado perlado, negro, rose", 
+        "price": 4.80,
+        "img": "/img/CATALOGUE/JIMENA.JPG"
+    },
+    {
+        "id": 10, 
+        "name": "Sara",
+        "sizes": "35/36,37/38,39/40", 
+        "colors": "Amarillo,blanco,azul perlado,verde claro, negro, rose", 
+        "price": 6.20,
+        "img": "/img/CATALOGUE/SARA.png"
+    }
+]
