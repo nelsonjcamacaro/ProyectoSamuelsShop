@@ -24,6 +24,7 @@ let ShoppingCart=[];
 
 const URLJSON="/productList.json" 
 
+storageValidation()
 showProductsInWindow();
 
 function showProductsInWindow(){
@@ -49,8 +50,8 @@ function showProductsInWindow(){
                 $(`#${product.id}`).on('click',()=>{
                     let idButton = parseInt($(`#p-${product.id}`).text());
                     addToCart(idButton,productList);
-                    console.log(idButton);
-                    // validarStorage();
+                    // console.log(idButton);
+                    storageValidation()
                 })
             }
         }
@@ -78,6 +79,16 @@ function addToCart(idProduct,products){
             className: "info",
         }).showToast();
     }
+    localStorage.setItem('carrito de compras', JSON.stringify(ShoppingCart));
+    storageValidation();
+}
+
+function storageValidation(){
+    if (localStorage.length !== 0){
+        let cartPulled = JSON.parse(localStorage.getItem('carrito de compras'));
+        ShoppingCart = [...cartPulled];
+        imprimirCarrito(ShoppingCart);
+    }
 }
 
 
@@ -104,37 +115,6 @@ function addToCart(idProduct,products){
 
 
 
-
-// const saveLocalStorage= (key,value) => { localStorage.setItem(key,value)}
-
-// for (const product of productList){
-//     saveLocalStorage(product.name,product.price);
-// }
-
-// let esto= localStorage.getItem('Mariel')
-// console.log (esto)
-
-// const AddToCarButton= document.querySelectorAll(".addToCart")
-
-// AddToCarButton.forEach((AddToCarButton2) => {
-//     AddToCarButton2.addEventListener('click',addToCarFunction);
-// })
-
-// const buyButton = document.querySelector('.comprarButton');
-// buyButton.addEventListener('click', comprarButtonClicked);
-
-// const shoppingCartItemsContainer = document.querySelector('.shoppingCartItemsContainer');
-
-// function addToCarFunction(e){
-//     const buttonClicked= e.target;
-//     const item = buttonClicked.closest('.item');
-
-//     const itemTitle = item.querySelector('.item-title').textContent;
-//     const itemPrice = item.querySelector('.item-price').textContent;
-//     const itemImage = item.querySelector('.img-thumbnail').src;
-    
-//     addItemToShoppingCart(itemTitle, itemPrice, itemImage);
-// }
 
 // function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
 //     const elementsTitle = shoppingCartItemsContainer.getElementsByClassName('shoppingCartItemTitle');
