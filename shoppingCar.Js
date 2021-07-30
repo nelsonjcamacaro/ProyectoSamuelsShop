@@ -11,6 +11,15 @@
 //     {id:'0113D', name: 'Sara',sizes: '35/36,37/38,39/40', colors: ['Amarillo','blanco','azul perlado','verde claro', 'negro', 'rose'], price: 6.20}
 // ]
 
+class Product {
+    constructor (id,name,price,img){
+        this.id=id;
+        this.name= name;
+        this.price=price;
+        this.img=img
+    }
+}
+
 let ShoppingCart=[];
 
 const URLJSON="/productList.json" 
@@ -25,30 +34,67 @@ function showProductsInWindow(){
             for(const product of productList){
                 $(".row").append(`                        
                 
-            <div class="col-12 col-md-3">
-                <div class="item shadow mb-4">
-                    <h3 class="item-title">${product.name}</h3>
-                    <img class="img-thumbnail" src="${product.img}">
-                    <div class="item-details">
-                        <h4 class="item-price"> ${product.price} USD</h4>
-                        <p id="p-${product.id}" style="display:none">${product.id}</p>
-                        <button class="item-button btn btn-primary addToCart" id="${product.id}">AGREGAR AL CARRITO</button>
+                <div class="col-12 col-md-3">
+                    <div class="item shadow mb-4">
+                        <h3 class="item-title">${product.name}</h3>
+                        <img class="img-thumbnail" src="${product.img}">
+                        <div class="item-details">
+                            <h4 class="item-price"> ${product.price} USD</h4>
+                            <p id="p-${product.id}" style="display:none">${product.id}</p>
+                            <button class="item-button btn btn-primary addToCart" id="${product.id}">AGREGAR AL CARRITO</button>
+                        </div>
                     </div>
-                </div>
-            </div>`)
+                </div>`)
 
-            $(`#${product.id}`).on('click',()=>{
-                let idButton = parseInt($(`#p-${product.id}`).text());
-                console.log(idButton);
-                let productSelected = arrayProducts.find(product => product.id === idButton);
-                // agregarProducto(productSelected);
-                // validarStorage();
-            })
+                $(`#${product.id}`).on('click',()=>{
+                    
+                    let idButton = parseInt($(`#p-${product.id}`).text());
+                    addToCart(idButton,productList);
+                    console.log(idButton);
+                    // let productSelected = arrayProducts.find(product => product.id === idButton);
+                    // agregarProducto(productSelected);
+                    // validarStorage();
+                    
+
+                })
             }
         }
     })
 }
-
+function addToCart(idProduct,products){
+    
+    if (ShoppingCart.find((elem)=>elem.id===idProduct)){
+        console.log("El elemento ya se encuentra en el carrito");
+    }else{
+        ShoppingCart.push(products[idProduct-1]);
+        console.log(ShoppingCart);
+        Toastify({
+            text: "Producto agregado al carrito",
+            backgroundColor: "green",
+            className: "info",
+        }).showToast();
+    }
+}
+// function addToCart2(idProduct){
+//     if (ShoppingCart.length !== 0){
+//         if (ShoppingCart.find(() => idProduct === product.id)){
+//             let indiceProductoMatcheado = ShoppingCart.indexOf(ShoppingCart.find(elem => elem.product.id === product.id));
+//             ShoppingCart[indiceProductoMatcheado].quantity += 1;
+//         } else {
+//             let newProduct = new Product(product.id,
+//                                         product.name,
+//                                         product.price,
+//                                         product.img)
+//             ShoppingCart.push(newProduct);
+//         }
+//     } else {
+//         let newProduct = new Product (product.id,product.name,product.price,product.img)
+//         ShoppingCart.push(newProduct);
+//     }
+    
+//     localStorage.setItem('ShoppingCart', JSON.stringify(ShoppingCart));
+//     // validarStorage();
+// }
 
 
 
