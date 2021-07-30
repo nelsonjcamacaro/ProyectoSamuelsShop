@@ -5,7 +5,8 @@
         "sizes": "36,37,38,39/40", 
         "colors": "Taupe,blanco,azul perlado,gris claro, negro, rose", 
         "price": 12.0,
-        "img": "/img/CATALOGUE/Mariel-Rose.jpg"
+        "img": "/img/CATALOGUE/Mariel-Rose.jpg",
+        "quantity":1
     },
     {
         "id": 2, 
@@ -13,7 +14,8 @@
         "sizes": "35/36,37/38,39/40", 
         "colors": "Verde aguacate,azul perlado,dorado, negro, pardo,rose", 
         "price": 8.0,
-        "img": "/img/CATALOGUE/JULIA.png"
+        "img": "/img/CATALOGUE/JULIA.png",
+        "quantity":1
     },
     {
         "id": 3, 
@@ -21,7 +23,8 @@
         "sizes": "35/36,37/38,39/40", 
         "colors": "Azul acido,Lila pastel,Rosado pastel, rose, verde claro", 
         "price": 5.40,
-        "img": "/img/CATALOGUE/POSITIVE.png"
+        "img": "/img/CATALOGUE/POSITIVE.png",
+        "quantity":1
     },
     {
         "id": 4, 
@@ -29,7 +32,8 @@
         "sizes": "35/36,37/38,39/40", 
         "colors": "Amarillo,blanco,azul perlado,verde claro, negro, rose", 
         "price": 5.90,
-        "img": "/img/CATALOGUE/CELIA.png"
+        "img": "/img/CATALOGUE/CELIA.png",
+        "quantity":1
     },
     {
         "id": 5, 
@@ -37,7 +41,8 @@
         "sizes": "35/36,37/38,39/40", 
         "colors": "fresa,azul perlado,amarillo,fucsia, morado, negro, verde claro", 
         "price": 5.10,
-        "img": "/img/CATALOGUE/AURORA.JPG"
+        "img": "/img/CATALOGUE/AURORA.JPG",
+        "quantity":1
     },
     {
         "id": 6, 
@@ -45,7 +50,8 @@
         "sizes": "35/36,37/38,39/40", 
         "colors": "blanco,azul perlado,beige, coca cola,negro, rose", 
         "price": 6.20,
-        "img": "/img/CATALOGUE/SALOME-ROSE.JPG"
+        "img": "/img/CATALOGUE/SALOME-ROSE.JPG",
+        "quantity":1
     },
     {
         "id": 7, 
@@ -53,7 +59,8 @@
         "sizes": "35/36,37/38,39/40", 
         "colors": "Lila perlado,blanco,azul perlado,cobre, negro, rose,rojo", 
         "price": 5.70,
-        "img": "/img/CATALOGUE/FRIDA.png"
+        "img": "/img/CATALOGUE/FRIDA.png",
+        "quantity":1
     },
     {
         "id": 8, 
@@ -61,7 +68,8 @@
         "sizes": "35/36,37/38,39/40", 
         "colors": "Bronce perlado,blanco,azul perlado,beige, negro, rose", 
         "price": 6.20,
-        "img": "/img/CATALOGUE/BIANCA.JPG"
+        "img": "/img/CATALOGUE/BIANCA.JPG",
+        "quantity":1
     },
     {
         "id": 9, 
@@ -69,7 +77,8 @@
         "sizes": "35/36,37/38,39/40", 
         "colors": "agua marina,lila pastel,naranja neon,rosado perlado, negro, rose", 
         "price": 4.80,
-        "img": "/img/CATALOGUE/JIMENA.JPG"
+        "img": "/img/CATALOGUE/JIMENA.JPG",
+        "quantity":1
     },
     {
         "id": 10, 
@@ -77,6 +86,7 @@
         "sizes": "35/36,37/38,39/40", 
         "colors": "Amarillo,blanco,azul perlado,verde claro, negro, rose", 
         "price": 6.20,
-        "img": "/img/CATALOGUE/SARA.png"
+        "img": "/img/CATALOGUE/SARA.png",
+        "quantity":1
     }
 ]

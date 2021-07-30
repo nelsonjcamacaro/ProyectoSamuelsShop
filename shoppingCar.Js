@@ -47,15 +47,10 @@ function showProductsInWindow(){
                 </div>`)
 
                 $(`#${product.id}`).on('click',()=>{
-                    
                     let idButton = parseInt($(`#p-${product.id}`).text());
                     addToCart(idButton,productList);
                     console.log(idButton);
-                    // let productSelected = arrayProducts.find(product => product.id === idButton);
-                    // agregarProducto(productSelected);
                     // validarStorage();
-                    
-
                 })
             }
         }
@@ -64,7 +59,16 @@ function showProductsInWindow(){
 function addToCart(idProduct,products){
     
     if (ShoppingCart.find((elem)=>elem.id===idProduct)){
+        products[idProduct-1].quantity +=1;
+        Toastify({
+            text: "Producto agregado al carrito",
+            backgroundColor: "green",
+            className: "info",
+        }).showToast();
+        
         console.log("El elemento ya se encuentra en el carrito");
+        console.log(ShoppingCart);
+
     }else{
         ShoppingCart.push(products[idProduct-1]);
         console.log(ShoppingCart);
@@ -75,26 +79,6 @@ function addToCart(idProduct,products){
         }).showToast();
     }
 }
-// function addToCart2(idProduct){
-//     if (ShoppingCart.length !== 0){
-//         if (ShoppingCart.find(() => idProduct === product.id)){
-//             let indiceProductoMatcheado = ShoppingCart.indexOf(ShoppingCart.find(elem => elem.product.id === product.id));
-//             ShoppingCart[indiceProductoMatcheado].quantity += 1;
-//         } else {
-//             let newProduct = new Product(product.id,
-//                                         product.name,
-//                                         product.price,
-//                                         product.img)
-//             ShoppingCart.push(newProduct);
-//         }
-//     } else {
-//         let newProduct = new Product (product.id,product.name,product.price,product.img)
-//         ShoppingCart.push(newProduct);
-//     }
-    
-//     localStorage.setItem('ShoppingCart', JSON.stringify(ShoppingCart));
-//     // validarStorage();
-// }
 
 
 
@@ -120,7 +104,8 @@ function addToCart(idProduct,products){
 
 
 
-const saveLocalStorage= (key,value) => { localStorage.setItem(key,value)}
+
+// const saveLocalStorage= (key,value) => { localStorage.setItem(key,value)}
 
 // for (const product of productList){
 //     saveLocalStorage(product.name,product.price);
