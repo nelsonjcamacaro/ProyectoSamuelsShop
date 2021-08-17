@@ -287,7 +287,7 @@ header .car-info .basket-logo {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: left;
-  background-image: url(/img/para-background.png);
+  background-image: url(img/para-background.png);
   background-position: center;
   background-repeat: no-repeat;
   -webkit-box-shadow: 2px 2px 10px #666;
