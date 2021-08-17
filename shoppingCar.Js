@@ -10,7 +10,7 @@ class Product {
 
 let shoppingCart=[];
 
-const URLJSON="/productList.json" 
+const URLJSON="productList.json" 
 storageValidation();
 
 showProductsInWindow();
@@ -180,5 +180,5 @@ $("#empty-Cart").click(emptyCart);
 
 function itemsMainInfo(quantityOfItems){
     $("#itemMainInfo").html("");
-    $(".car-info").prepend(`<a class="nav-item" id="itemMainInfo" href="/shoppingCar.html"><p class="totals">${quantityOfItems}</p></a>`)
+    $(".car-info").prepend(`<a class="nav-item" id="itemMainInfo" href="shoppingCar.html"><p class="totals">${quantityOfItems}</p></a>`)
 }
