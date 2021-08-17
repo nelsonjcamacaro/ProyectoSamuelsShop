@@ -19,15 +19,31 @@
             <ul class="navigation-side">
                 <li><a class="nav-item" href="/index.html">Inicio</a></li>
                 <li><a class="nav-item" href="/productos.html">Productos</a></li>
-                <li><a class="nav-item" href="">Nosotros</a></li>
-                <li><a class="nav-item" href="">Contacto</a></li>
+                <li><a class="nav-item" href="#about-us">Nosotros</a></li>
+                <li><a class="nav-item" href="#contact-us">Contacto</a></li>
+                <li><a class="nav-item" href="#contact-us">Contacto</a></li>
             </ul>
         </nav>
 
         <div class="car-info">
-            <a class="nav-item" href="/shoppingCar.html"><p class="totals" >$</p></a>
-            <a class="nav-item" href="/shoppingCar.html"><p class="totals">Productos</p></a>
             <a class="nav-item" href="/shoppingCar.html"><img class="basket-logo" src="/icons/venta.png" alt="carrito de compras"></a>
+        </div>
+
+        <div class="dropdown non-visible-menu">
+            <button class="btn btn-secondary dropdown-toggle menu-responsive" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li><a class="nav-item" href="/index.html">Inicio</a></li>
+                <li><a class="nav-item" href="/productos.html">Productos</a></li>
+                <li><a class="nav-item" href="#about-us">Nosotros</a></li>
+                <li><a class="nav-item" href="#contact-us">Contacto</a></li>
+                <li>
+                    <div class="car-info2">
+                        <a class="nav-item" href="/shoppingCar.html"><img class="basket-logo2" src="/icons/venta.png" alt="carrito de compras"></a>
+                    </div>
+                </li>
+            </ul>
         </div>
 
     </header>
@@ -40,13 +56,13 @@
         </div>
         <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="/img/banner3.jpeg" class="d-block w-100" alt="...">
+            <img src="/banners/banner1.png" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="/img/banner4.PNG" class="d-block w-100" alt="...">
+            <img src="/banners/banner2.png" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="/img/banner5.PNG" class="d-block w-100" alt="...">
+            <img src="/banners/banner3.png" class="d-block w-100" alt="...">
         </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -59,57 +75,102 @@
         </button>
     </div>
 
-    <section class="main-info">
-
-        <!-- <div class="banner"></div>
-        <div id="transition" class="products-transition imgubication1">
-            <a href="#">
-                <img src="/img/feedshoes.jpg" alt="" id="imgLogo">
-                <img src="/img/CATALOGUE/AURORA.jpg" alt="" class="imgCarousel" id="img1">
-                <img src="/img/CATALOGUE/BIANCA.jpg" alt="" class="imgCarousel" id="img2">
-                <img src="/img/CATALOGUE/CELIA.png" alt="" class="imgCarousel" id="img3">
-                <img src="/img/CATALOGUE/FRIDA.png" alt="" class="imgCarousel" id="img4">
-                <img src="/img/CATALOGUE/JULIA.png" alt="" class="imgCarousel" id="img5">
+    <main>
+        <section class="main-info">
+            <a href="/productos.html" class="ladys-side">     
+                <div class="card" style="width: 22rem;">
+                    <img src="/img/womenSS.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Damas</h5>
+                    </div>
+                </div>
             </a>
-        </div> -->
+            <a href="/productos.html" class="gentlemen-side">
+                <div class="card" style="width: 22rem;">
+                    <img src="/img/menSS.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Caballeros</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/productos.html" class="children-side">
+                <div class="card" style="width: 22rem;">
+                    <img src="/img/childrenSS.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Niños</h5>
+                    </div>
+                </div>
+            </a>
+        </section>
+        <section class="about-info" id="about-us">
+            <div class="about-us">
+                <img class="img-about-us" src="/img/ENTREGA SAMUELS/LOGO COLOR NEGRO/LOGO EN CIRCULO.png" alt="">
+                <h3 class="h3-about-us">Sobre nosotros</h3>
+                <p class="p-about-us" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolor cupiditate maiores fuga omnis deserunt nisi, necessitatibus commodi quidem. Quas et unde optio expedita distinctio suscipit consequuntur impedit accusantium exercitationem! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor necessitatibus, facilis blanditiis est culpa consequatur at neque laborum optio odio suscipit nam earum, excepturi eius quisquam praesentium autem minus consequuntur lobortis Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae enim explicabo assumenda sequi quidem numquam optio, cumque modi maiores pariatur in temporibus, quis dolore dignissimos quia. Voluptatem error omnis repudiandae!.</p>
+            </div>
+    
+            <aside>
+                <img class="banner-about-us" src="/banners/bannerdescuento.png" alt="">
+            </aside>
+        </section>
 
-        <a href="" class="ladys-side">            
-            <img class="img_sides" src="/img/womenSS.jpeg" alt="">
-            <h3 class="h3-category">Damas</h3>
-        </a>
-        
-        <a href="" class="gentlemen-side">
-            <img class="img_sides" src="/img/menSS.jpeg" alt="">
-            <h3 class="h3-category">Caballeros</h3>
-        </a>
-
-        <a href="" class="children-side">
-            <img class="img_sides" src="/img/childrenSS.jpeg" alt="">
-            <h3 class="h3-category">Niños</h3>
-        </a>
-
-        
-
-
-        <div class="about-us">
-            <img class="img-about-us" src="/img/ENTREGA SAMUELS/LOGO COLOR NEGRO/LOGO EN CIRCULO.png" alt="">
-            <p class="p-about-us" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolor cupiditate maiores fuga omnis deserunt nisi, necessitatibus commodi quidem. Quas et unde optio expedita distinctio suscipit consequuntur impedit accusantium exercitationem! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor necessitatibus, facilis blanditiis est culpa consequatur at neque laborum optio odio suscipit nam earum, excepturi eius quisquam praesentium autem minus consequuntur.</p>
-        </div>
-
-    </section>
+        <section class="contact-us" id="contact-us" >
+            <div class="col6 last contenido">
+                <h4>Envíanos un mensaje:</h4>
+                <label>Area: <span>*</span></label>
+                <div>
+                    <select class="campos" id="mail_enviar" name="mail_enviar" required="">
+                        <option name="" value="">Seleccione...</option> 
+                        <option >Ventas</option>
+                        
+                        <option >Mercadeo</option>
+                        <option id="rh" >Recursos Humanos</option>
+                            
+                        <option id="buy" >Compras</option>
+                    </select> 
+                </div>
+                <label>Nombre: <span>*</span></label>
+                <div>
+                    <input name="txtnombre" type="text" class="campos" id="txtnombre" size="35" required="">
+                </div>
+                <label>Empresa: </label>
+                <div>
+                    <input name="txtempresa" type="text" class="campos" id="txtempresa" size="35">
+                </div>
+                <label>Dirección: <span>*</span></label>
+                <div>
+                    <input name="txtdireccion" type="text" placeholder="Estado / Ciudad / Dirección" class="campos" id="txtdireccion" size="35" required="">
+                </div>
+                <label>Telefono: <span>*</span></label>
+                <div>
+                    <input name="txttelefono" type="text" class="campos" id="txttelefono" size="35" required="">
+                </div>
+                <label>Email: <span>*</span></label>
+                <div>
+                    <input name="txtcorreo" type="text" class="campos" id="txtcorreo" size="35">
+                </div>
+                <label>Comentario: </label>
+                <div>
+                    <textarea name="txtcomentario" cols="30" rows="5" class="campos" id="txtcomentario" required=""></textarea>
+                </div>
+                <div>
+                    <input type="button" name="button" id="button" value="Enviar" class="btn btn-info">
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="dark-footer">
-
         <section class="footer-section section1">
             <h3 class="footer-tittle-section">Siguenos</h3>
-
-            <a href="https://www.instagram.com/samuels_shop/">
-            <img class="social-media-icons" src="/icons/instlogorose (2).jpeg" alt="">
-            </a>
-            <a href="https://www.facebook.com/samuelsshop">
-                <img class="social-media-icons" src="/icons/facebooklogorose.jpeg" alt="">
-            </a>
-            <img src="/img/qr.png" alt="">
+            <div class="social-media-info">
+                <a class="icon-instagram" href="https://www.instagram.com/samuels_shop/">
+                    <img class="social-media-icons" src="/icons/instlogorose (2).jpeg" alt="">
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/samuelsshop">
+                    <img class="social-media-icons" src="/icons/facebooklogorose.jpeg" alt="">
+                </a>
+            </div>
         </section>
 
         <section class="footer-section section2">
@@ -127,6 +188,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="carousel.js"></script>
+    <script src="/shoppingCar.Js"></script>
+    <script src="/anidmation.js"></script>
 </body>
 </html>

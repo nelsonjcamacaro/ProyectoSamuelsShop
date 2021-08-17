@@ -24,6 +24,7 @@ $blue-color: #55c0e5;
     box-sizing: border-box;
     padding:0;
     margin:0;
+    font-family: 'TITUS';
 }
 
 @mixin sectionFooter {
@@ -37,17 +38,9 @@ $blue-color: #55c0e5;
 }
 
 @mixin cardsCategoryStyle {
-    // background-size: 25px 50px;
-    // background-position:center;
     width: auto;
-    height: 500px;
-    margin: 10px 50px 0 10px;
-    // background-size: auto 100%;
-    // background-repeat: no-repeat;
-    overflow: hidden;
-    // box-shadow: $blue-color 10px 10px 10px 10px;
-    // position: relative;
-    // float: left;
+    // height: 400px;
+    margin-left: 50px;
 }
 
 a{
@@ -56,7 +49,8 @@ a{
 
 header{
     margin-top: 0;
-    // position: fixed;
+    // position: relative;
+    // flex-flow: row nowrap;
     color: $intermediate-color;
     background-color: $black-color;
     height: 150px;
@@ -64,6 +58,9 @@ header{
     display: grid; 
     grid-template-columns: repeat(6,1fr);
     box-shadow: 0px 11px 11px -5px $black-color;
+    .dropdown{
+        display: none;
+    }
     .logo2{
         grid-column: 1/3;
         .main-logo{
@@ -90,9 +87,16 @@ header{
         }
     }
 
+.nav-item:hover{
+    color: $blue-color !important;
+    border-radius: 15%;
+    transition: 200ms;
+    text-shadow: #ea68b2 1px 1px !important;
+}
+
     .car-info{
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         grid-column: 6/7;
         
         .nav-item{
@@ -100,10 +104,19 @@ header{
             font-family: "TITUS";
         }
         .totals{
-            margin-top: 100px;
-            margin-right: 30px;
-            color: $intermediate-color;
-            font-size: 1.5rem;
+            margin-top: 95px;
+            margin-left: 15px;
+            color: $black-color;
+            font-size: 0.8rem;
+            font-weight: bolder;
+            background-color: $primary-color;
+            width: 15px;
+            height: 15px;
+            border-radius: 1000px;
+            text-align: center;
+            align-items: center;
+            align-content: center;
+            position: absolute;
         }
         .basket-logo{
             margin-top: 100px;
@@ -114,58 +127,37 @@ header{
     }
 }
 
-
 .main-info{
     display: grid; 
-    grid-template-columns: repeat(14,1fr);
-    grid-template-rows: repeat(3,1fr);
-    // column-gap: 10px;
-    height: 1500px;
+    grid-template-columns: repeat(3,1fr);
+    // gap: 30px;
+    grid-template-rows: 1fr;
+    height: 700px;
     text-align: center;
-    
-    // .imgubication1{
-    //     grid-column: 11/15;
-    //     grid-row: 1/2;
-    // }
-
-    .products-transition{
-        margin-top:50px;
-        display:flex;
-        justify-content: center;
-        width: 100%;
-        height: 500px;
-        .imgCarousel{
-            display: none;
-            padding: 10px;
-        }
-        #imgLogo{
-            display: flex;
-            width: auto;
-            height: 500px
-        }
-    }
+    margin-top: 50px;
 
     .ladys-side{
-        grid-column: 2/6;
+        grid-column: 1/2;
         grid-row: 1/2;
         align-self: center;
         @include cardsCategoryStyle;
-        // background-image: url(/img/womenSS.jpeg);
+        // border-radius: 3%;
     }
     .gentlemen-side{
-        grid-column: 6/10;
+        grid-column: 2/3;
         grid-row: 1/2;
         align-self: center;
         @include cardsCategoryStyle;
-        // background-image: url(/img/menSS.jpeg);
+        // border-radius: 3%;
     }
     .children-side{
-        grid-column: 10/14;
+        grid-column: 3/4;
         grid-row: 1/2;
         align-self: center;
         @include cardsCategoryStyle;
-        // background-image: url(/img/childrenSS.jpeg);
+        // border-radius: 3%;
     }
+
     .children-side:hover{
         transform: scale(1.1);        
         transition: 1s;
@@ -178,23 +170,47 @@ header{
         transform: scale(1.1);        
         transition: 1s;
     }
+}
 
+.about-info{
+    display: grid;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    justify-content:center;
+    justify-items: center;
+    justify-self: center;
     .about-us{
-        grid-column: 1/15;
-        grid-row: 3/4;
-        display: grid;
-        grid-template-columns: repeat(14,1fr);
+        grid-column: 1/3;
+        grid-row: 1/3;
         .img-about-us{
-            margin-top: 80px;
-            grid-column: 2/8;
-            width: 350px;
             height: 350px;
+            width: 350px;
+            margin-left: 310px;
+        }
+        .h3-about-us{
+            // display: none;
+            text-align: center;
+            color: $black-color;
+            font-family: "TITUS";
+            font-weight: bolder;
         }
         .p-about-us{
-            margin-top: 120px;
-            grid-column: 8/14;
-            height: 250px;
-            width: 100%;
+            // display: none;
+            text-align: center;
+            color: $black-color !important;
+            @include fontStyle();
+            font-size: 1.5rem;
+        }
+    }
+    aside{
+        grid-column: 3/4;
+        grid-row: 1/3;
+        .banner-about-us{
+            width: 400px;
+            height:700px ;
+            box-shadow: 2px 2px 10px #666;
         }
     }
 }
@@ -205,14 +221,33 @@ header{
     margin-right: 15px;
 }
 
-.banner{
-    background-image: url(/img/banner3.jpeg);
+.contact-us{
+    width: 1000px;
+    height: 600px;
+    // padding: 0px 50px 0px 50px;
+    margin-bottom: 100px;
+    margin-left: 270px;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    background-image:url("/img/para-background.png");   
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-    grid-column: 2/10;
-    width: 80%;
-    height: 350px;
-    margin-top: 50px;
+    box-shadow: 2px 2px 10px #666;
+    font-family: 'TITUS';
+    color: white;
+    font-weight: bold;
+    .campos{
+        width: 500px;
+    }
+    .btn-info{
+        margin-left: 430px;
+
+    }
+    h4{
+        margin-left: 90px;
+        font-size: 40px;
+    }
 }
 
 
@@ -221,26 +256,24 @@ header{
     height: 300px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-        .footer-section{
-        text-align: center;
-            .footer-tittle-section{
-                margin-top: 30px;
-                @include fontStyle();
-            }
-            .footer-product-info{
-                margin-top: 40px;
-                font-size: 1.2rem;
-                font-weight: bold;
-                text-decoration: none;
-                @include fontStyle();
-            }
+    .footer-section{
+    text-align: center;
+        .footer-tittle-section{
+            margin-top: 30px;
+            @include fontStyle();
         }
+        .footer-product-info{
+            margin-top: 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            @include fontStyle();
+        }
+    }
     .section1{grid-column: 1/2;}
     .section2{grid-column: 2/3;}
     .section3{grid-column: 3/4;}
 }
-
-
 
 // seccion de la hoja html para la lista de productos //
 
@@ -249,18 +282,224 @@ header{
     margin-top: 100px;
 }
 
-
-.h3-category{
-    @include fontStyle();
-    margin-top: 0px;
-    background-color: #55c0e5;
-}
-
-.w-100{
-    height: 450.15px;
-}
-
 .img_sides{
     width: 400px;
     height: 650px;
+}
+
+.img-thumbnail2{
+    width: 50px;
+    height: 50px;
+}
+
+.shopping-cart{
+    height: 1000px;
+    margin-top: 100px;
+    .shopping-cart-main-tittle{
+        @include fontStyle();
+        color: $black-color;
+        text-shadow: 0px 0px 5px $blue-color;
+    }
+    .shopping-cart-header{
+        font-family: 'TITUS';
+        font-weight: bolder;
+    }
+    h6, p, input{
+        font-size: 1.2rem !important;
+        font-family: 'TITUS';
+    }
+}
+
+.shopping-cart-item-title{
+    text-align: center;
+    width: 200px;
+}
+
+.shopping-cart-total{
+    display: flex;
+    justify-content:space-evenly;
+    margin-top: 20px;
+}
+
+.show-totals{
+    display: flex;
+}
+
+.h3-category{
+    @include fontStyle();
+    // margin-top: 100px;
+    background-color: #55c0e5;
+    // color: $black-color;
+    font-weight: bold;
+    align-self: flex-end;
+}
+
+.card-body{
+    background-color: $black-color;
+    box-shadow: 2px 2px 10px #666;
+    .card-title{
+        color: $secundary-color;
+        font-family: "TITUS";
+        font-weight: bold;
+    }
+}
+
+.card-img-top{
+    box-shadow: 2px 2px 10px #666;
+}
+
+.for-fonts{
+    font-family: 'TITUS';
+    font-size: 1.2rem;  
+}
+
+h3 {
+    font-size: 1.8rem !important;
+}
+
+.main-product-tittle{
+    text-align: center;
+    margin-top: 50px;
+    text-shadow: #ea68b2 1px 1px;
+    font-weight: bolder;
+}
+
+.menu-responsive{
+    background-color: $black-color !important;
+}
+
+@media (max-width: 480px){
+    body{
+        height: 5500px;
+    }
+
+    .navbar1{
+        display: none;
+    }
+    
+    .car-info{
+        display:none !important;
+    }
+
+    .dropdown{
+        display: block !important;
+        grid-column: 6/7;
+        align-content: center;
+        margin-top: 60px;
+        margin-right: 10px;
+    }
+
+    .main-logo{
+        grid-column: 1/4;
+        width: 200px !important;
+        height: 150px !important;
+        margin-left: 10px !important;
+    }
+
+    .dropdown-menu{
+        background-color: $black-color !important;
+        .nav-item{
+            color: $primary-color !important;
+            font-family: 'TITUS';
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        .basket-logo2{
+            margin-top: 10px;
+            height: 30px;
+            width: 30px;
+            margin-left: 60px;
+        }
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,1fr);
+        width: 480px;
+        height: auto;
+        .main-info{
+            display: grid;
+            grid-row: 1/2;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3,1fr);
+            height: 2500px;
+            .ladys-side{
+                grid-column: 1/2;
+                grid-row: 1/2;
+                margin-bottom: 50px;
+                margin-left: 60px;
+            }
+            .gentlemen-side{
+                grid-column: 1/2;
+                grid-row: 2/3;
+                margin-bottom: 50px;
+                margin-left: 60px;
+            }
+            .children-side{
+                grid-column: 1/2;
+                grid-row: 3/4;
+                margin-bottom: 50px;
+                margin-left: 60px;
+            }
+        }
+    
+        .about-info{
+            grid-row: 2/3;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            // margin-top: 1500px;
+            .about-us{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(3,1fr);
+                .img-about-us{
+                    grid-column: 1/2;
+                    grid-row: 1/2;
+                    margin-left: -580px;
+                    margin-top: -100px;
+                    margin-bottom: -300px;
+                }
+                .h3-about-us{
+                    margin-top: -450px;
+                    margin-left: -630px;
+                    grid-column: 1/2;
+                    grid-row: 2/3;
+                    align-items: center;
+                    height: 50px;
+                    width: 480px;
+                }
+                .p-about-us{
+                    // margin-top: 20px;
+                    grid-column: 1/2;
+                    grid-row: 3/4;
+                    height: 550px;
+                    width: 450px;
+                    margin-left: -620px;
+                    margin-top: -1150px;
+                    // margin-bottom: -50000px;
+                }
+            }
+        .contact-us{
+            grid-row: 3/4;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            width: 450px;
+            margin-left: -280px;
+            margin-top: 0px;
+            margin-bottom: 50%;
+            .last{
+                grid-column: 1/2;
+                grid-row: 1/2;
+                width: 100px;
+            }
+        }
+    }
+    
+        aside{
+            display: none;
+        }
+    }
 }

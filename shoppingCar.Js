@@ -1,48 +1,45 @@
-// var productList = [
-//     {id:'0159D', name: 'Mariel',sizes: '36,37,38,39/40', colors: ['Taupe','blanco','azul perlado','gris claro', 'negro', 'rose'], price: 12.0,},
-//     {id:'0164D', name: 'Julia',sizes: '35/36,37/38,39/40', colors: ['Verde aguacate','azul perlado','dorado', 'negro', 'pardo','rose'], price: 8.0},
-//     {id:'0187D', name: 'Positive',sizes: '35/36,37/38,39/40', colors: ['Azul acido','Lila pastel','Rosado pastel', 'rose', 'verde claro'], price: 5.40},
-//     {id:'0168D', name: 'Celia',sizes: '35/36,37/38,39/40', colors: ['Amarillo','blanco','azul perlado','verde claro', 'negro', 'rose'], price: 5.90},
-//     {id:'0150D', name: 'Aurora',sizes: '35/36,37/38,39/40', colors: ['fresa','azul perlado','amarillo','fucsia', 'mora', 'negro', 'verde claro'], price: 5.10},
-//     {id:'0144D', name: 'Salome',sizes: '35/36,37/38,39/40', colors: ['blanco','azul perlado','beige', 'coca cola','negro', 'rose'], price: 6.20},
-//     {id:'0143D', name: 'Frida',sizes: '35/36,37/38,39/40', colors: ['Lila perlado','blanco','azul perlado','cobre', 'negro', 'rose','rojo'], price: 5.70},
-//     {id:'0154', name: 'Bianca',sizes: '35/36,37/38,39/40', colors: ['Bronce perlado','blanco','azul perlado','beige', 'negro', 'rose'], price: 6.20},
-//     {id:'167', name: 'Jimena',sizes: '35/36,37/38,39/40', colors: ['agua marina','lila pastel','naranja neon','rosado perlado', 'negro', 'rose'], price: 4.80},
-//     {id:'0113D', name: 'Sara',sizes: '35/36,37/38,39/40', colors: ['Amarillo','blanco','azul perlado','verde claro', 'negro', 'rose'], price: 6.20}
-// ]
-
 class Product {
     constructor (id,name,price,img){
         this.id=id;
         this.name= name;
         this.price=price;
-        this.img=img
+        this.img=img;
+        this.quantity= quantity
     }
 }
 
-let ShoppingCart=[];
+let shoppingCart=[];
 
 const URLJSON="/productList.json" 
+storageValidation();
 
-storageValidation()
 showProductsInWindow();
 
 function showProductsInWindow(){
     $.getJSON(URLJSON,(response,state)=>{
         if (state === "success"){
             let productList = response;
-            // console.log(response);
+            // console.log("lo que viene de JSON es") estos estan ok
+            // console.log(response); estos estan ok
             for(const product of productList){
-                $(".row").append(`                        
-                
-                <div class="col-12 col-md-3">
-                    <div class="item shadow mb-4">
-                        <h3 class="item-title">${product.name}</h3>
-                        <img class="img-thumbnail" src="${product.img}">
+                $(".row2").
+                append(`
+                <div class="col-12 col-md-3" style="margin-bottom:100px">
+                    <div class="item shadow mb-4>
+                        <h3 class="item-tittle for-fonts" style="font-size:1.5rem">
+                            ${product.name}
+                        </h3>
+                        <img class="img-thumbnail" src="${product.img}"/>
                         <div class="item-details">
-                            <h4 class="item-price"> ${product.price} USD</h4>
-                            <p id="p-${product.id}" style="display:none">${product.id}</p>
-                            <button class="item-button btn btn-primary addToCart" id="${product.id}">AGREGAR AL CARRITO</button>
+                            <h4 class="item-price for-fonts">
+                                ${product.price} USD
+                            </h4>
+                            <p id="p-${product.id}" style="display:none">
+                                ${product.id}
+                            </p>
+                            <button class="item-button btn btn-primary addToCart for-fonts" id="${product.id}">
+                                AGREGAR AL CARRITO
+                            </button>
                         </div>
                     </div>
                 </div>`)
@@ -50,149 +47,138 @@ function showProductsInWindow(){
                 $(`#${product.id}`).on('click',()=>{
                     let idButton = parseInt($(`#p-${product.id}`).text());
                     addToCart(idButton,productList);
-                    // console.log(idButton);
                     storageValidation()
                 })
             }
         }
     })
 }
+
 function addToCart(idProduct,products){
-    
-    if (ShoppingCart.find((elem)=>elem.id===idProduct)){
-        products[idProduct-1].quantity +=1;
+    if (shoppingCart.some(elem=>elem.id===idProduct)){
+        let indexValue= shoppingCart.indexOf(shoppingCart.find(elem=>elem.id===idProduct));
+        // console.log(indexValue);
+        shoppingCart[indexValue].quantity += 1;
         Toastify({
-            text: "Producto agregado al carrito",
+            text: `Genial! has sumado un producto mas de ${shoppingCart[indexValue].name} `,
             backgroundColor: "green",
             className: "info",
         }).showToast();
         
-        console.log("El elemento ya se encuentra en el carrito");
-        console.log(ShoppingCart);
-
     }else{
-        ShoppingCart.push(products[idProduct-1]);
-        console.log(ShoppingCart);
+        shoppingCart.push(products[idProduct-1]);
         Toastify({
             text: "Producto agregado al carrito",
             backgroundColor: "green",
             className: "info",
         }).showToast();
     }
-    localStorage.setItem('carrito de compras', JSON.stringify(ShoppingCart));
+    localStorage.setItem('carrito de compras', JSON.stringify(shoppingCart));
     storageValidation();
 }
 
 function storageValidation(){
     if (localStorage.length !== 0){
         let cartPulled = JSON.parse(localStorage.getItem('carrito de compras'));
-        ShoppingCart = [...cartPulled];
-        imprimirCarrito(ShoppingCart);
+        shoppingCart = [...cartPulled];
+        totalPurchase()
+        printshoppingCart(shoppingCart);
     }
 }
 
 
+function printshoppingCart(shoppingCartArray){
+    
+    $(".shoppingCartItemsContainer").html('');
+    
+    shoppingCartArray.forEach(element => {
+        $(".shoppingCartItemsContainer").append(`
+            <div class="row shoppingCartItem${element.id}">
+                <div class="col-6">
+                    <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                        <img src=${element.img} class="img-thumbnail2">
+                        <h6 class="shopping-cart-item-title shoppingCartItemTitle${element.id} ml-3 mb-0" id="${element.id}">${element.name}</h6>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="shopping-cart-price${element.id} d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                        <p class="item-price mb-0 shoppingCartItemPrice">${element.price} USD</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div
+                        class="shopping-cart-quantity${element.id} d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
+                        <input class="shopping-cart-quantity-input shoppingCartItemQuantity${element.id}" type="number" min="1"
+                            value="${element.quantity}">
+                        <button class="btn btn-danger buttonDelete${element.id}" id="${element.id}" type="button">X</button>
+                    </div>
+                </div>
+            </div>`)
+            $(`.buttonDelete${element.id}`).click(()=>{
+                RemoveProduct(element.id);
+            })
+            $(`.shoppingCartItemQuantity${element.id}`).focusout(()=>{
+                let inputValue = Number( $(`.shoppingCartItemQuantity${element.id}`).val())
+                updatingProductQuantity(element.id,shoppingCart,inputValue)
+            })
+    });
+}
 
 
+function RemoveProduct(id){
+    let indexValue= shoppingCart.indexOf(shoppingCart.find(elem=>elem.id===id));
+    shoppingCart.splice(indexValue,1)
+    Toastify({
+        text: 'Producto eliminado del carrito',
+        backgroundColor: "red",
+        className: "info",
+    }).showToast();
+    localStorage.setItem('carrito de compras', JSON.stringify(shoppingCart));
+    storageValidation()
+    $("#empty-Cart").click(emptyCart);
+}
+
+function totalPurchase(){
+    $('.shopping-cart-total').html('');
+    
+    let total=0;
+    let quantityOfItems= 0;
+    shoppingCart.forEach(elem=>{
+        total +=elem.price*elem.quantity;
+        quantityOfItems += elem.quantity;
+    })
+    itemsMainInfo(quantityOfItems);
+    $('.shopping-cart-total').append(`
+    <div class="show-totals">
+        <p class="mb-0 total-compra">Total = </p>
+        <p class="ml-4 mb-0 shoppingCartTotal monto-total">${total.toFixed(1)} USD</p>
+    </div>
+    <div>
+        <button class="btn btn-danger ml-auto" type="button" data-toggle="modal"
+        data-target="#comprarModal" id="empty-Cart"> Vaciar Carrito </button>    
+    </div>
+    <a href="https://api.whatsapp.com/send?phone=5491122554014&text=Me%20gustaría%20saber%20el%20precio%20del%20sitio%20web%20" target="_blank" rel="noopener"><button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
+    data-target="#comprarModal"> Finalizar Compra </button></a>`)
+}
 
 
+function updatingProductQuantity(id, shoppingCartArray, inputValue){
+    let indexValue= shoppingCartArray.indexOf(shoppingCart.find(elem=>elem.id===id));
+    shoppingCart[indexValue].quantity = inputValue;
+    localStorage.setItem('carrito de compras', JSON.stringify(shoppingCart));
+    storageValidation()
+    $("#empty-Cart").click(emptyCart);
+}
 
+function emptyCart(){
+    shoppingCart=[];
+    localStorage.setItem('carrito de compras', JSON.stringify(shoppingCart));
+    storageValidation()
+}
 
+$("#empty-Cart").click(emptyCart);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
-//     const elementsTitle = shoppingCartItemsContainer.getElementsByClassName('shoppingCartItemTitle');
-//     for (let i = 0; i < elementsTitle.length; i++) {
-//         if (elementsTitle[i].innerText === itemTitle) {
-//             let elementQuantity = elementsTitle[i].parentElement.parentElement.parentElement.querySelector('.shoppingCartItemQuantity');
-//             elementQuantity.value++;
-//             $('.toast').toast('show');
-//             updateShoppingCartTotal();
-//             return;
-//         }
-//     }
-
-//     const shoppingCartRow = document.createElement('div');
-//     const shoppingCartContent = `
-//     <div class="row shoppingCartItem">
-//             <div class="col-6">
-//                 <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-//                     <img src=${itemImage} class="img-thumbnail2">
-//                     <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0">${itemTitle}</h6>
-//                 </div>
-//             </div>
-//             <div class="col-2">
-//                 <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-//                     <p class="item-price mb-0 shoppingCartItemPrice">${localStorage.getItem(itemTitle)} USD</p>
-//                 </div>
-//             </div>
-//             <div class="col-4">
-//                 <div
-//                     class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
-//                     <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
-//                         value="1">
-//                     <button class="btn btn-danger buttonDelete" type="button">X</button>
-//                 </div>
-//             </div>
-//     </div>`;
-
-//     shoppingCartRow.innerHTML = shoppingCartContent;
-
-//     shoppingCartItemsContainer.append(shoppingCartRow);
-
-//     shoppingCartRow.querySelector('.buttonDelete').addEventListener('click', removeShoppingCartItem);
-
-//     shoppingCartRow.querySelector('.shoppingCartItemQuantity').addEventListener('change', quantityChanged);
-
-//     updateShoppingCartTotal();
-// }
-
-// function updateShoppingCartTotal() {
-//     let total = 0;
-//     const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
-
-//     const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
-
-//     shoppingCartItems.forEach((shoppingCartItem) => {
-//         const shoppingCartItemPriceElement = shoppingCartItem.querySelector('.shoppingCartItemPrice');
-//         const shoppingCartItemPrice = Number( shoppingCartItemPriceElement.textContent.replace('USD', ''));
-//         const shoppingCartItemQuantityElement = shoppingCartItem.querySelector('.shoppingCartItemQuantity');
-//         const shoppingCartItemQuantity = Number( shoppingCartItemQuantityElement.value);
-//         total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
-//     });
-
-//     shoppingCartTotal.innerHTML = `${total.toFixed(2)} USD`;
-// }
-
-// function removeShoppingCartItem(event) {
-//     const buttonClicked = event.target;
-//     buttonClicked.closest('.shoppingCartItem').remove();
-//     updateShoppingCartTotal();
-// }
-
-// function quantityChanged(event) {
-//     const input = event.target;
-//     input.value <= 0 ? (input.value = 1) : null;
-//     updateShoppingCartTotal();
-// }
-
-// function comprarButtonClicked() {
-//     shoppingCartItemsContainer.innerHTML = '';
-//     updateShoppingCartTotal();
-// }
+function itemsMainInfo(quantityOfItems){
+    $("#itemMainInfo").html("");
+    $(".car-info").prepend(`<a class="nav-item" id="itemMainInfo" href="/shoppingCar.html"><p class="totals">${quantityOfItems}</p></a>`)
+}

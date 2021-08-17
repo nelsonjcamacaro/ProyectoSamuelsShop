@@ -18,26 +18,41 @@
             <ul class="navigation-side">
                 <li><a class="nav-item" href="/index.html">Inicio</a></li>
                 <li><a class="nav-item" href="/productos.html">Productos</a></li>
-                <li><a class="nav-item" href="">Nosotros</a></li>
-                <li><a class="nav-item" href="">Contacto</a></li>
+                <li><a class="nav-item" href="/index.html#about-us">Nosotros</a></li>
+                <li><a class="nav-item" href="/index.html#contact-us">Contacto</a></li>
             </ul>
         </nav>
 
         <div class="car-info">
-            <a class="nav-item" href="/shoppingCar.html"><p class="totals" >$</p></a>
-            <a class="nav-item" href="/shoppingCar.html"><p class="totals">Productos</p></a>
             <a class="nav-item" href="/shoppingCar.html"><img class="basket-logo" src="/icons/venta.png" alt="carrito de compras"></a>
+        </div>
+
+        <div class="dropdown non-visible-menu">
+            <button class="btn btn-secondary dropdown-toggle menu-responsive" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li><a class="nav-item" href="/index.html">Inicio</a></li>
+                <li><a class="nav-item" href="/productos.html">Productos</a></li>
+                <li><a class="nav-item" href="#about-us">Nosotros</a></li>
+                <li><a class="nav-item" href="#contact-us">Contacto</a></li>
+                <li>
+                    <div class="car-info2">
+                        <a class="nav-item" href="/shoppingCar.html"><img class="basket-logo2" src="/icons/venta.png" alt="carrito de compras"></a>
+                    </div>
+                </li>
+            </ul>
         </div>
 
     </header>
 
         <!-- START SECTION STORE -->
-        <h2>DAMAS</h2>
+        <h2 class="main-product-tittle">DAMAS</h2>
 
         <section class="store">
             <div class="container">
                 <div class="items">
-                    <div class="row">
+                    <div class="row row2">
                     </div>
                 </div>
             </div>
@@ -45,17 +60,17 @@
         <!-- END SECTION STORE -->
 
         <footer class="dark-footer">
-
             <section class="footer-section section1">
                 <h3 class="footer-tittle-section">Siguenos</h3>
-    
-                <a href="#">
-                <img class="social-media-icons" src="/icons/instlogorose (2).jpeg" alt="">
-                </a>
-                <a href="#">
-                    <img class="social-media-icons" src="/icons/facebooklogorose.jpeg" alt="">
-                </a>
-                <img src="/img/qr.png" alt="">
+                <div class="social-media-info">
+                    <a class="icon-instagram" href="https://www.instagram.com/samuels_shop/">
+                        <img class="social-media-icons" src="/icons/instlogorose (2).jpeg" alt="">
+                    </a>
+                    <a class="icon-facebook" href="https://www.facebook.com/samuelsshop">
+                        <img class="social-media-icons" src="/icons/facebooklogorose.jpeg" alt="">
+                    </a>
+                    <!-- <img src="/img/qr.png" alt=""> -->
+                </div>
             </section>
     
             <section class="footer-section section2">

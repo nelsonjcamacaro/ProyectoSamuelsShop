@@ -18,6 +18,7 @@
           box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'TITUS';
 }
 
 a {
@@ -36,6 +37,10 @@ header {
       grid-template-columns: repeat(6, 1fr);
   -webkit-box-shadow: 0px 11px 11px -5px #212529;
           box-shadow: 0px 11px 11px -5px #212529;
+}
+
+header .dropdown {
+  display: none;
 }
 
 header .logo2 {
@@ -75,13 +80,21 @@ header .navbar1 .navigation-side .nav-item {
   margin-right: 50px;
 }
 
+header .nav-item:hover {
+  color: #55c0e5 !important;
+  border-radius: 15%;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  text-shadow: #ea68b2 1px 1px !important;
+}
+
 header .car-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-grid-column: 6;
   -ms-grid-column-span: 1;
   grid-column: 6/7;
@@ -93,10 +106,22 @@ header .car-info .nav-item {
 }
 
 header .car-info .totals {
-  margin-top: 100px;
-  margin-right: 30px;
-  color: #f08db8;
-  font-size: 1.5rem;
+  margin-top: 95px;
+  margin-left: 15px;
+  color: #212529;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  background-color: #fad9e8;
+  width: 15px;
+  height: 15px;
+  border-radius: 1000px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  position: absolute;
 }
 
 header .car-info .basket-logo {
@@ -109,43 +134,19 @@ header .car-info .basket-logo {
 .main-info {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[14];
-      grid-template-columns: repeat(14, 1fr);
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
-  height: 1500px;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  height: 700px;
   text-align: center;
-}
-
-.main-info .products-transition {
   margin-top: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-  height: 500px;
-}
-
-.main-info .products-transition .imgCarousel {
-  display: none;
-  padding: 10px;
-}
-
-.main-info .products-transition #imgLogo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: auto;
-  height: 500px;
 }
 
 .main-info .ladys-side {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 4;
-  grid-column: 2/6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
@@ -153,15 +154,13 @@ header .car-info .basket-logo {
       -ms-grid-row-align: center;
       align-self: center;
   width: auto;
-  height: 500px;
-  margin: 10px 50px 0 10px;
-  overflow: hidden;
+  margin-left: 50px;
 }
 
 .main-info .gentlemen-side {
-  -ms-grid-column: 6;
-  -ms-grid-column-span: 4;
-  grid-column: 6/10;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
@@ -169,15 +168,13 @@ header .car-info .basket-logo {
       -ms-grid-row-align: center;
       align-self: center;
   width: auto;
-  height: 500px;
-  margin: 10px 50px 0 10px;
-  overflow: hidden;
+  margin-left: 50px;
 }
 
 .main-info .children-side {
-  -ms-grid-column: 10;
-  -ms-grid-column-span: 4;
-  grid-column: 10/14;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
@@ -185,9 +182,7 @@ header .car-info .basket-logo {
       -ms-grid-row-align: center;
       align-self: center;
   width: auto;
-  height: 500px;
-  margin: 10px 50px 0 10px;
-  overflow: hidden;
+  margin-left: 50px;
 }
 
 .main-info .children-side:hover {
@@ -211,35 +206,67 @@ header .car-info .basket-logo {
   transition: 1s;
 }
 
-.main-info .about-us {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 14;
-  grid-column: 1/15;
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
+.about-info {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[14];
-      grid-template-columns: repeat(14, 1fr);
+  margin-top: 100px;
+  margin-bottom: 100px;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
-.main-info .about-us .img-about-us {
-  margin-top: 80px;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 6;
-  grid-column: 2/8;
-  width: 350px;
+.about-info .about-us {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+}
+
+.about-info .about-us .img-about-us {
   height: 350px;
+  width: 350px;
+  margin-left: 310px;
 }
 
-.main-info .about-us .p-about-us {
-  margin-top: 120px;
-  -ms-grid-column: 8;
-  -ms-grid-column-span: 6;
-  grid-column: 8/14;
-  height: 250px;
-  width: 100%;
+.about-info .about-us .h3-about-us {
+  text-align: center;
+  color: #212529;
+  font-family: "TITUS";
+  font-weight: bolder;
+}
+
+.about-info .about-us .p-about-us {
+  text-align: center;
+  color: #212529 !important;
+  color: #f08db8;
+  font-family: "TITUS";
+  font-size: 1.5rem;
+}
+
+.about-info aside {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+}
+
+.about-info aside .banner-about-us {
+  width: 400px;
+  height: 700px;
+  -webkit-box-shadow: 2px 2px 10px #666;
+          box-shadow: 2px 2px 10px #666;
 }
 
 .social-media-icons {
@@ -248,16 +275,39 @@ header .car-info .basket-logo {
   margin-right: 15px;
 }
 
-.banner {
-  background-image: url(/img/banner3.jpeg);
+.contact-us {
+  width: 1000px;
+  height: 600px;
+  margin-bottom: 100px;
+  margin-left: 270px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: left;
+  background-image: url("/img/para-background.png");
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 8;
-  grid-column: 2/10;
-  width: 80%;
-  height: 350px;
-  margin-top: 50px;
+  -webkit-box-shadow: 2px 2px 10px #666;
+          box-shadow: 2px 2px 10px #666;
+  font-family: 'TITUS';
+  color: white;
+  font-weight: bold;
+}
+
+.contact-us .campos {
+  width: 500px;
+}
+
+.contact-us .btn-info {
+  margin-left: 430px;
+}
+
+.contact-us h4 {
+  margin-left: 90px;
+  font-size: 40px;
 }
 
 .dark-footer {
@@ -310,19 +360,283 @@ header .car-info .basket-logo {
   margin-top: 100px;
 }
 
-.h3-category {
-  color: #f08db8;
-  font-family: "TITUS";
-  margin-top: 0px;
-  background-color: #55c0e5;
-}
-
-.w-100 {
-  height: 450.15px;
-}
-
 .img_sides {
   width: 400px;
   height: 650px;
+}
+
+.img-thumbnail2 {
+  width: 50px;
+  height: 50px;
+}
+
+.shopping-cart {
+  height: 1000px;
+  margin-top: 100px;
+}
+
+.shopping-cart .shopping-cart-main-tittle {
+  color: #f08db8;
+  font-family: "TITUS";
+  color: #212529;
+  text-shadow: 0px 0px 5px #55c0e5;
+}
+
+.shopping-cart .shopping-cart-header {
+  font-family: 'TITUS';
+  font-weight: bolder;
+}
+
+.shopping-cart h6, .shopping-cart p, .shopping-cart input {
+  font-size: 1.2rem !important;
+  font-family: 'TITUS';
+}
+
+.shopping-cart-item-title {
+  text-align: center;
+  width: 200px;
+}
+
+.shopping-cart-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.show-totals {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.h3-category {
+  color: #f08db8;
+  font-family: "TITUS";
+  background-color: #55c0e5;
+  font-weight: bold;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.card-body {
+  background-color: #212529;
+  -webkit-box-shadow: 2px 2px 10px #666;
+          box-shadow: 2px 2px 10px #666;
+}
+
+.card-body .card-title {
+  color: #ea68b2;
+  font-family: "TITUS";
+  font-weight: bold;
+}
+
+.card-img-top {
+  -webkit-box-shadow: 2px 2px 10px #666;
+          box-shadow: 2px 2px 10px #666;
+}
+
+.for-fonts {
+  font-family: 'TITUS';
+  font-size: 1.2rem;
+}
+
+h3 {
+  font-size: 1.8rem !important;
+}
+
+.main-product-tittle {
+  text-align: center;
+  margin-top: 50px;
+  text-shadow: #ea68b2 1px 1px;
+  font-weight: bolder;
+}
+
+.menu-responsive {
+  background-color: #212529 !important;
+}
+
+@media (max-width: 480px) {
+  body {
+    height: 5500px;
+  }
+  .navbar1 {
+    display: none;
+  }
+  .car-info {
+    display: none !important;
+  }
+  .dropdown {
+    display: block !important;
+    -ms-grid-column: 6;
+    -ms-grid-column-span: 1;
+    grid-column: 6/7;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin-top: 60px;
+    margin-right: 10px;
+  }
+  .main-logo {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+    width: 200px !important;
+    height: 150px !important;
+    margin-left: 10px !important;
+  }
+  .dropdown-menu {
+    background-color: #212529 !important;
+  }
+  .dropdown-menu .nav-item {
+    color: #fad9e8 !important;
+    font-family: 'TITUS';
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+  }
+  .dropdown-menu .basket-logo2 {
+    margin-top: 10px;
+    height: 30px;
+    width: 30px;
+    margin-left: 60px;
+  }
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+    width: 480px;
+    height: auto;
+  }
+  main .main-info {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+    height: 2500px;
+  }
+  main .main-info .ladys-side {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    margin-bottom: 50px;
+    margin-left: 60px;
+  }
+  main .main-info .gentlemen-side {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    margin-bottom: 50px;
+    margin-left: 60px;
+  }
+  main .main-info .children-side {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    margin-bottom: 50px;
+    margin-left: 60px;
+  }
+  main .about-info {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+  main .about-info .about-us {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+  }
+  main .about-info .about-us .img-about-us {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    margin-left: -580px;
+    margin-top: -100px;
+    margin-bottom: -300px;
+  }
+  main .about-info .about-us .h3-about-us {
+    margin-top: -450px;
+    margin-left: -630px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 50px;
+    width: 480px;
+  }
+  main .about-info .about-us .p-about-us {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    height: 550px;
+    width: 450px;
+    margin-left: -620px;
+    margin-top: -1150px;
+  }
+  main .about-info .contact-us {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    width: 450px;
+    margin-left: -280px;
+    margin-top: 0px;
+    margin-bottom: 50%;
+  }
+  main .about-info .contact-us .last {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    width: 100px;
+  }
+  main aside {
+    display: none;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
