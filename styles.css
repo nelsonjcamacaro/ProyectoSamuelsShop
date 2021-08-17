@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Angelica";
-  src: url("/fonts/Angelica.otf");
+  src: url("fonts/Angelica.otf");
 }
 
 @font-face {
   font-family: "trajan pro 3";
-  src: url("/fonts/TrajanPro3-Bold.otf");
+  src: url("fonts/TrajanPro3-Bold.otf");
 }
 
 @font-face {
   font-family: "TITUS";
-  src: url("/fonts/TITUSCBZ.ttf");
+  src: url("fonts/TITUSCBZ.ttf");
 }
 
 * {

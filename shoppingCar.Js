@@ -1,13 +1,3 @@
-class Product {
-    constructor (id,name,price,img){
-        this.id=id;
-        this.name= name;
-        this.price=price;
-        this.img=img;
-        this.quantity= quantity
-    }
-}
-
 let shoppingCart=[];
 
 const URLJSON="productList.json" 
@@ -25,7 +15,7 @@ function showProductsInWindow(){
                 $(".row2").
                 append(`
                 <div class="col-12 col-md-3" style="margin-bottom:100px">
-                    <div class="item shadow mb-4>
+                    <div class="item shadow mb-4">
                         <h3 class="item-tittle for-fonts" style="font-size:1.5rem">
                             ${product.name}
                         </h3>
@@ -95,7 +85,7 @@ function printshoppingCart(shoppingCartArray){
             <div class="row shoppingCartItem${element.id}">
                 <div class="col-6">
                     <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                        <img src=${element.img} class="img-thumbnail2">
+                        <img src="${element.img}" class="img-thumbnail2">
                         <h6 class="shopping-cart-item-title shoppingCartItemTitle${element.id} ml-3 mb-0" id="${element.id}">${element.name}</h6>
                     </div>
                 </div>
