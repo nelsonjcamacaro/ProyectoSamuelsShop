@@ -57,7 +57,6 @@ function showProductsInWindow(){
 function addToCart(idProduct,products){
     if (shoppingCart.some(elem=>elem.id===idProduct)){
         let indexValue= shoppingCart.indexOf(shoppingCart.find(elem=>elem.id===idProduct));
-        // console.log(indexValue);
         shoppingCart[indexValue].quantity += 1;
         Toastify({
             text: `Genial! has sumado un producto mas de ${shoppingCart[indexValue].name} `,
